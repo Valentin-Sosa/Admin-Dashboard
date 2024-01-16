@@ -82,7 +82,10 @@ header
     
     display: grid;
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1.5fr 2fr;
+    row-gap: 5vh;
+
+    box-shadow: 0 2px 3px black;
 }
 
 #search-bar
@@ -117,11 +120,78 @@ header
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(2,1fr);
+    place-items: center start;
+}
+
+#buttons button
+{
+    appearance: none;
+    border: none;
+    background-color: #2563eb;
+    border-radius: 3rem;
+    color: #ffffff;
+    font-weight: bold;
+    height: 5vh;
+    width: 7vw;
 }
 
 #user
 {
     grid-area: 1 / 1 / 2 / 4;
+    justify-self: end;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 3vw;
+
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding-right: 3vw;
+}
+
+#notifications
+{
+    height: 25px;
+    width: auto;
+}
+
+.user-photo
+{
+    height: 45px;
+    width: 45px;
+    border-radius: 5rem;
+}
+
+#user-info
+{
+    align-self: center;
+
+    display: flex;
+    padding-left: 4vw;
+    align-items: center;
+    gap: 1vw;
+}
+
+#text
+{
+    display: flex;
+    flex-direction: column;
+    gap: 0.7vh;
+    font-weight: bold;
+    font-size: 0.8rem;
+}
+
+#text span
+{
+    font-size: 1.4rem;
+}
+
+#user-info img
+{
+    height: 70px;
+    width: 70px;
+    border-radius: 5rem;  
 }
 
 main
@@ -129,12 +199,58 @@ main
     display: grid;
     height: 100%;
     grid-template-columns: 2.4fr 1fr;
+    background-color: #e2e8f0;
+    column-gap: 2vw;
 }
 
 #second-layout
 {
     display: grid;
-    grid-template-rows: 1.2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: center start;
+}
+
+#announcements, #trending
+{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#announcements > section, #trending > section
+{
+    background-color: #ffffff;
+    margin-top: 1vh;
+    padding: 3vh 2vw;
+    border-radius: 0.6rem;
+    font-size: 0.9rem;
+    width: 19vw;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+
+    box-shadow: 1px 2px 2px #94a3b8;
+}
+
+#announcements p, #trending p
+{
+    color: #6b7280;
+    font-size: 0.7rem;
+    font-weight: normal;
+}
+
+#medium
+{
+    padding: 2vh 0;
+    border-top: #94a3b8 solid 1px;
+    border-bottom: #94a3b8 solid 1px;
+}
+
+#trending > section > section
+{
+    display: grid;
+    grid-template-columns: 1fr 2.5fr;
+    place-items: center start;
 }
 
 #principal-layout
@@ -143,6 +259,8 @@ main
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
+
+
 
 
 
