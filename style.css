@@ -12,7 +12,7 @@ body
 {
     height: 100vh;
     display: grid;
-    grid-template-columns: 1fr 5fr;
+    grid-template-columns: 1fr 4.7fr;
     grid-template-rows: 1fr 3.5fr;
 }
 
@@ -20,6 +20,7 @@ body
 {
     background-color: #2563eb;
     color: #ffffff;
+    padding: 1vh 1vw;
 
     grid-area: 1 / 1 / 3 / 2;
 
@@ -33,7 +34,7 @@ body
     display: flex;
     align-items: center;
     gap: 1vw;
-    padding: 1vh 1vw;
+    padding: 1vh 1.1vw;
 }
 
 #logo > h1
@@ -84,8 +85,7 @@ header
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1.5fr 2fr;
     row-gap: 5vh;
-
-    box-shadow: 0 2px 3px black;
+    min-height: 200px;
 }
 
 #search-bar
@@ -131,8 +131,15 @@ header
     border-radius: 3rem;
     color: #ffffff;
     font-weight: bold;
-    height: 5vh;
-    width: 7vw;
+    height: clamp(30px,5vh,40px);
+    width: clamp(60px,7vw,150px);
+}
+
+#buttons button:hover
+{
+    background-color: #e2e8f0;
+    color: #2563eb;
+    border: #2563eb solid 1px;
 }
 
 #user
@@ -143,7 +150,7 @@ header
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 3vw;
+    gap: 2.7vw;
 
     font-size: 1.2rem;
     font-weight: bold;
@@ -196,11 +203,16 @@ header
 
 main
 {
+    position: relative;
+
     display: grid;
     height: 100%;
     grid-template-columns: 2.4fr 1fr;
     background-color: #e2e8f0;
     column-gap: 2vw;
+    padding: 7vh 0;
+
+    overflow: scroll;
 }
 
 #second-layout
@@ -208,6 +220,7 @@ main
     display: grid;
     grid-template-rows: 1fr 1fr;
     place-items: center start;
+    row-gap: 2vh;
 }
 
 #announcements, #trending
@@ -229,7 +242,7 @@ main
     flex-direction: column;
     gap: 3vh;
 
-    box-shadow: 1px 2px 2px #94a3b8;
+    box-shadow: 1px 2px 2px #cbd5e1;
 }
 
 #announcements p, #trending p
@@ -258,8 +271,59 @@ main
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    place-items: center;
+    row-gap: 3vh;
 }
 
+#principal-layout > div
+{
+    background-color: #ffffff;
+    border-radius: 0.7rem;
+    padding: 3.5vh 1.5vw 2vh;
+    width: 25vw;
+    height: 25vh;
+    box-shadow: 1px 3px 3px #cbd5e1;
+    border-left: #2563eb solid 11px;
+    font-weight: bold;
+
+    display: grid;
+    grid-template-rows: 4fr 1fr;
+}
+
+
+#principal-layout > div > section > p
+{
+    grid-row: 1 / 2;
+
+    color: #6b7280;
+    font-size: 0.9rem;
+    font-weight: normal;
+    width: 18vw;
+}
+
+.options
+{
+    justify-self: end;
+
+    display: flex;
+    gap: 1.5vw;
+}
+
+.options img
+{
+    width: 23px;
+    height: 23px;
+
+}
+
+main > span
+{
+    position: absolute;
+    top: 4vh;
+    left: 1.6vw;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
 
 
 
